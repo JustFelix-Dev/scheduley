@@ -11,16 +11,8 @@ const Navbar = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const profileRef = useRef();
-    const [ renderOnce,setRenderOnce] = useState(false);
+    const [ renderOnce,setRenderOnce] = useState(true);
 
-    useEffect(()=>{
-        if(!renderOnce){
-          setRenderOnce(true)
-          if(renderOnce){
-            setRenderOnce(false)
-          }
-        }
-      },[])
 
       const navVariants = {
         hidden: {opacity:0},
@@ -45,7 +37,7 @@ const profileShow = ()=>{
                 </Link>
             </motion.div>
             <div onClick={profileShow} className="profilemenu"><img src="/profilemenu.png" alt="profile" height={30} width={30} /></div>
-            <motion.div variants={ renderOnce ? navVariants : {}}  initial="hidden" animate="visible" className="user__details" ref={profileRef} >
+            <motion.div variants={ renderOnce ? navVariants : {}}  initial="hidden" animate="visible" onAnimationComplete={()=> setRenderOnce(false)} className="user__details" ref={profileRef} >
                     <div onClick={profileHide} className="profile__cancel">
                         <img src="/cancelmenu.png" alt="close" height={17} width={17} />
                   </div>
