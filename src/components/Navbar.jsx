@@ -2,7 +2,7 @@ import { useSelector,useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setLogout } from "../features/user/userSlice";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef ,useEffect} from "react";
 
 
 
@@ -11,7 +11,24 @@ const Navbar = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const profileRef = useRef();
+    const [ renderOnce,setRenderOnce] = useState(false);
 
+    useEffect(()=>{
+        if(!renderOnce){
+          setRenderOnce(true)
+          if(renderOnce){
+            setRenderOnce(false)
+          }
+        }
+      },[])
+
+      const navVariants = {
+        hidden: {opacity:0},
+        visible: {opacity:1, 
+          transition:{
+            duration:1,
+          }}
+    }
 const profileHide = ()=>{
     profileRef.current.style.transform = "scale(0)";
 }
@@ -28,7 +45,7 @@ const profileShow = ()=>{
                 </Link>
             </motion.div>
             <div onClick={profileShow} className="profilemenu"><img src="/profilemenu.png" alt="profile" height={30} width={30} /></div>
-            <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{duration:1}} className="user__details" ref={profileRef} >
+            <motion.div variants={ renderOnce ? navVariants : {}}  initial="hidden" animate="visible" className="user__details" ref={profileRef} >
                     <div onClick={profileHide} className="profile__cancel">
                         <img src="/cancelmenu.png" alt="close" height={17} width={17} />
                   </div>
