@@ -101,7 +101,7 @@
   }
 
 .nav__wrapper .user__details{
-  display: flex;
+  display: none;
   gap: 1rem;
   align-items: center;
   transition: all ease-in-out 300ms;

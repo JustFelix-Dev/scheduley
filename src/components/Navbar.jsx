@@ -21,11 +21,11 @@ const Navbar = () => {
     //       }}
     // }
 const profileHide = ()=>{
-    profileRef.current.style.transform = "scale(0)";
+    profileRef.current.style.display = "none";
 }
 
 const profileShow = ()=>{
-    profileRef.current.style.transform = "scale(1)";
+    profileRef.current.style.display = "block";
 }
     return (  
           <>
