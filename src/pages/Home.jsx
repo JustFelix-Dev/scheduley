@@ -35,6 +35,7 @@ const Home = () => {
 
     const showFilterDays = ()=>{
         setShowFilter(true)
+        showFilterRef.current.style.display = "block";
 
     }
 
