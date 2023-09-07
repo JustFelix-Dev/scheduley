@@ -470,8 +470,6 @@ main .task__container .eachTask .task__content .status.completed{
     .nav__wrapper .user__details{
       display: none;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
       position:fixed;
       top: 15px;
       right: 20px;

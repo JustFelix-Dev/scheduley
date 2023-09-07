@@ -25,7 +25,7 @@ const profileHide = ()=>{
 }
 
 const profileShow = ()=>{
-    profileRef.current.style.display = "block";
+    profileRef.current.style.display = "flex";
 }
     return (  
           <>
