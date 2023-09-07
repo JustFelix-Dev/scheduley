@@ -48,7 +48,6 @@ const Login = () => {
           setLoading(true)
              axios.post('/auth/login', values)
              .then((res)=>{
-              console.log(res)
                 onSubmitProps.resetForm()
                 toast.success(res.data.message)
                 dispatch(setLogin(res.data.user))
@@ -66,7 +65,6 @@ const Login = () => {
             for(const property of Object.keys(values)){
                 formData.append(property, values[property])
             }
-            console.log(values,formData)
             axios.post('/auth/signup',formData,{
               headers:{'Content-Type':'multipart/form-data'}
             })

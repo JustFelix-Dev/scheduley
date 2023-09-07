@@ -4,8 +4,6 @@ import { setLogout } from "../features/user/userSlice";
 import { motion } from "framer-motion";
 import { useRef ,useEffect,useState} from "react";
 
-
-
 const Navbar = () => {
     const {user} = useSelector((state,action)=> state.user)
     const dispatch = useDispatch()
@@ -14,13 +12,14 @@ const Navbar = () => {
     const [ renderOnce,setRenderOnce] = useState(true);
 
 
-      const navVariants = {
-        hidden: {opacity:0},
-        visible: {opacity:1, 
-          transition:{
-            duration:1,
-          }}
-    }
+    //   const navVariants = {
+    //     hidden: {opacity:0},
+    //     visible: {opacity:1, 
+    //       transition:{
+    //         duration:1,
+
+    //       }}
+    // }
 const profileHide = ()=>{
     profileRef.current.style.transform = "scale(0)";
 }
@@ -37,7 +36,7 @@ const profileShow = ()=>{
                 </Link>
             </motion.div>
             <div onClick={profileShow} className="profilemenu"><img src="/profilemenu.png" alt="profile" height={30} width={30} /></div>
-            <motion.div variants={ renderOnce ? navVariants : {}}  initial="hidden" animate="visible" onAnimationComplete={()=> setRenderOnce(false)} className="user__details" ref={profileRef} >
+            <motion.div className="user__details" ref={profileRef} >
                     <div onClick={profileHide} className="profile__cancel">
                         <img src="/cancelmenu.png" alt="close" height={17} width={17} />
                   </div>

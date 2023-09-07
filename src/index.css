@@ -104,6 +104,7 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  transition: all ease-in-out 300ms;
 }
 .nav__wrapper .user__details .profile__cancel{
   cursor: pointer;
@@ -161,6 +162,7 @@ main .filter__wrapper .filterDays{
   padding: 1rem 1.9rem;
   flex-direction: column;
   z-index: 1;
+  transition: all ease-in-out 300ms;
 }
 main .filter__wrapper .filterDays .hamburger{
   cursor: pointer;
