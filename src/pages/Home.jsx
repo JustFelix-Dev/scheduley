@@ -34,8 +34,8 @@ const Home = () => {
     }
 
     const showFilterDays = ()=>{
+          showFilterRef.current.style.display = "flex";
         setShowFilter(true)
-        showFilterRef.current.style.display = "block";
 
     }
 
@@ -68,7 +68,7 @@ const Home = () => {
         </div>
          <AnimatePresence>
        { 
-       showFilter && <motion.div ref={showFilterRef} className="filterDays">
+       showFilter && <motion.div exit={{opacity:0,scale:0}} initial={{opacity:0,scale:0}} animate={{opacity:1,scale:1}}  transition={{duration:0.4,type:'spring'}} ref={showFilterRef} className="filterDays">
             <div onClick={hideFilterDays} className="hamburger"><img src="/cancelmenu.png" alt="menu" height={15} width={15}/></div>
             {
                 days.map((day,idx)=>{
