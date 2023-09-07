@@ -365,7 +365,7 @@ main .task__container .eachTask .task__content .status.completed{
   .title form{
     color: white;
     background-color: #333;
-    padding: 0  3rem 2rem 3rem;
+    padding: 0  6rem 2rem 6rem;
     margin-top: 20px;
     border-radius: 0 30px ;
   }
@@ -512,6 +512,7 @@ main .task__container .eachTask .task__content .status.completed{
   }
   .title form {
     margin-inline: 2rem;
+    padding-inline: 3.5rem;
   }
   
 }
