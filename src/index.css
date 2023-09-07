@@ -152,8 +152,7 @@ main .filter__wrapper .addTask:hover{
     opacity: 0.7;
 }
 main .filter__wrapper .filterDays{
-  display: flex;
-  transform: scale(0);
+  display: none;
   gap: 1rem;
   align-items: center;
   position: fixed;
