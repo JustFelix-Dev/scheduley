@@ -34,13 +34,13 @@ const Home = () => {
     }
 
     const showFilterDays = ()=>{
-          showFilterRef.current.style.display = "flex";
+          showFilterRef.current.style.transform = "scale(1)";
         // setShowFilter(true)
 
     }
 
     const hideFilterDays=()=>{
-        showFilterRef.current.style.display = "none";
+        showFilterRef.current.style.transform = "scale(0)";
        
 
     }
