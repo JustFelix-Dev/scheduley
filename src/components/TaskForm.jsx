@@ -94,7 +94,7 @@ const TaskForm = ({ mode = 'edit', task }) => {
              <>
                 <h3 className='taskText'>{task?.name}</h3>
                 <div className="title">
-                      <motion.form initial={{opacity:0}} animate={{opacity:1}}  onSubmit={handleSubmit}>
+                      <motion.form initial={{opacity:0,scale:0.9}} animate={{opacity:1,scale:1}}  onSubmit={handleSubmit}>
                        <div className='anchor'></div>
                     <h2>{mode === 'create' ? 'Create a Task' : 'Edit a Task'}</h2>
                         <label htmlFor="taskName">Task Name:</label> <br />
