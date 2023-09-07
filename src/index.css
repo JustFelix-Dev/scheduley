@@ -468,7 +468,7 @@ main .task__container .eachTask .task__content .status.completed{
 
   @media screen and (max-width:700px){
     .nav__wrapper .user__details{
-      display: flex;
+      display: none;
       flex-direction: column;
       position:fixed;
       top: 15px;
