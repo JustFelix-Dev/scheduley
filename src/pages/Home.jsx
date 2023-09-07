@@ -12,7 +12,7 @@ const Home = () => {
     const dispatch = useDispatch()
     const [ typeFilter,setTypeFilter ] = useState('')
     const [ dayFilter,setDayFilter ] = useState('')
-    const [ showFilter,setShowFilter] = useState(true);
+    // const [ showFilter,setShowFilter] = useState(true);
     const showFilterRef = useRef()
     const types = ['General','Chores','Miscellaneous','Work','Ideas','Meetings','Shopping','Payments'];
 
@@ -35,12 +35,13 @@ const Home = () => {
 
     const showFilterDays = ()=>{
           showFilterRef.current.style.display = "flex";
-        setShowFilter(true)
+        // setShowFilter(true)
 
     }
 
     const hideFilterDays=()=>{
-        setShowFilter(false)
+        showFilterRef.current.style.display = "none";
+       
 
     }
     return ( 
@@ -67,8 +68,7 @@ const Home = () => {
             </Link>
         </div>
          <AnimatePresence>
-       { 
-       showFilter && <motion.div exit={{opacity:0,scale:0}} initial={{opacity:0,scale:0}} animate={{opacity:1,scale:1}}  transition={{duration:0.4,type:'spring'}} ref={showFilterRef} className="filterDays">
+        <motion.div exit={{opacity:0,scale:0}} initial={{opacity:0,scale:0}} animate={{opacity:1,scale:1}}  transition={{duration:0.4,type:'spring'}} ref={showFilterRef} className="filterDays">
             <div onClick={hideFilterDays} className="hamburger"><img src="/cancelmenu.png" alt="menu" height={15} width={15}/></div>
             {
                 days.map((day,idx)=>{
@@ -76,7 +76,6 @@ const Home = () => {
                 })
             }
         </motion.div>
-        }
         </AnimatePresence>
         <div>
            <div onClick={showFilterDays} className="menu">
