@@ -36,14 +36,12 @@ To install and run only the front-end of Scheduley:
      cd client
    
   2.  Install the dependencies:
-    ```bash
+      ```bash
      npm install
-
 
 ## Usage
 
 To start the front-end of Scheduley :
-    ```bash
     
      # Navigate to the client directory if not already there
     cd client
